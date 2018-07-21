@@ -30,10 +30,7 @@ public class ThemeExtension extends BaseExtension
 		super.onStartup();
 		
 		isInMenu = true;
-		menuName = "Extension Name";
-		
-		isInGameCenter = true;
-		gameCenterName = "Extension Name";
+		menuName = "torcado themes";
 		
 		try {
 			ThemeLoader.run(defaultTheme);
