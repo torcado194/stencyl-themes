@@ -33,7 +33,7 @@ public class ThemeExtension extends BaseExtension
 		menuName = "torcado themes";
 		
 		try {
-			ThemeLoader.run(defaultTheme);
+			ThemeLoader.run(readStringProp("theme", defaultTheme));
 			log.info("Themes --------- loaded");
 		} catch (NoSuchFieldException e) {
 			log.info("Themes --------- NoSuchFieldException");
@@ -55,7 +55,7 @@ public class ThemeExtension extends BaseExtension
 		log.info("SampleExtension : Activated");
 		
 		try {
-			ThemeLoader.run(defaultTheme);
+			ThemeLoader.run(readStringProp("theme", defaultTheme));
 			log.info("Themes --------- loaded");
 		} catch (NoSuchFieldException e) {
 			log.info("Themes --------- NoSuchFieldException");
@@ -152,7 +152,7 @@ public class ThemeExtension extends BaseExtension
 				putProp("theme", dropdown.getSelectedItem());
 				
 				try {
-					ThemeLoader.run(readStringProp("theme", "DarkFlat"));
+					ThemeLoader.run(readStringProp("theme", defaultTheme));
 					log.info("Themes --------- loaded");
 				} catch (NoSuchFieldException e) {
 					log.info("Themes --------- NoSuchFieldException");

@@ -70,8 +70,8 @@ public class ThemeLoader
         DarkFlat_Main.put("DARK_BG_COLOR",          new Color( 72,  64,  94)); // scene inspector background
         DarkFlat_Main.put("LIGHT_BUTTON_BAR_START", new Color(109, 108, 142)); // settings page tab backgrounds, font tabs background 
         DarkFlat_Main.put("LIGHT_BUTTON_BAR_END",   new Color(109, 108, 142)); // ^
-        DarkFlat_Main.put("BUTTON_BAR_START",       new Color(109, 108, 142)); // tabs
-        DarkFlat_Main.put("BUTTON_BAR_END",         new Color(109, 108, 142)); // ^
+        DarkFlat_Main.put("BUTTON_BAR_START",       new Color( 71,  70, 102)); // tabs, main bottom bar, bottom bar on dialog popup
+        DarkFlat_Main.put("BUTTON_BAR_END",         new Color( 71,  70, 102)); // ^
         DarkFlat_Main.put("COMMAND_BAR_START",      new Color(109, 108, 142)); // behind behavior name and "add to _"
         DarkFlat_Main.put("COMMAND_BAR_MID",        new Color(109, 108, 142)); // ^
         DarkFlat_Main.put("COMMAND_BAR_END",        new Color(109, 108, 142)); // ^
@@ -97,7 +97,7 @@ public class ThemeLoader
         DarkNeon_Block.put("RED",       new BlockTheme(new Color(130, 61, 66), new Color(229, 86, 64), new Color(229, 86, 64), new Color(229, 86, 64) ));
         DarkNeon_Block.put("GRAY",      new BlockTheme(new Color(85, 85, 104), new Color(125, 125, 165), new Color(125, 125, 165), new Color(125, 125, 165) ));
         DarkNeon_Block.put("DARK_GRAY", new BlockTheme(new Color(96, 86, 122), new Color(141, 141, 188), new Color(141, 141, 188), new Color(141, 141, 188) ));
-        DarkNeon_Block.put("L_GRAY",    new BlockTheme(new Color(66,  66,  79), new Color(103, 103, 132), new Color(103, 103, 132), new Color(103, 103, 132) ));
+        DarkNeon_Block.put("LGRAY",    new BlockTheme(new Color(66,  66,  79), new Color(103, 103, 132), new Color(103, 103, 132), new Color(103, 103, 132) ));
         
         
         Default_Block.put("ORANGE",    new BlockTheme( new Color(200, 140, 55), new Color(150, 100, 60), new Color(210, 150, 65), new Color(220, 160, 75) ));
@@ -193,8 +193,14 @@ public class ThemeLoader
         for (Map.Entry<String, BlockTheme> entry : block.entrySet()) {
             String color = entry.getKey();
             BlockTheme theme = entry.getValue();
-
-            Field field = BlockTheme.class.getDeclaredField( color );
+            
+            Field field;
+            try {
+            	field = BlockTheme.class.getDeclaredField( color );
+            } catch (NoSuchFieldException e) {
+                continue;
+            }
+            
             field.setAccessible( true );
 
             Field modifiersField = Field.class.getDeclaredField( "modifiers" );
@@ -208,7 +214,13 @@ public class ThemeLoader
             String color = entry.getKey();
             Color theme = entry.getValue();
 
-            Field field = Theme.class.getDeclaredField( color );
+            Field field;
+            try {
+            	field = Theme.class.getDeclaredField( color );
+            } catch (NoSuchFieldException e) {
+                continue;
+            }
+            
             field.setAccessible( true );
 
             Field modifiersField = Field.class.getDeclaredField( "modifiers" );
