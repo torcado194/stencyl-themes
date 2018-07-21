@@ -1,53 +1,26 @@
 <!--
 +==========================================================================
-| New Stencyl Extension
+| Stencyl Themes
 +==========================================================================
 -->
 
 <project name="stencyl" basedir="." default="dist">
-	
-	<!-- This extension can be built as-is. Make sure to set the properties in "build-helper.properties". -->
 	
 	<property name="pkg" value="com/torcado/themes" />
 	
 	<!-- The "main" class must extends BaseExtension. -->
 	<property name="main" value="com.torcado.themes.ThemeExtension" />
 	
-	<!-- Alternatively, you can specify that this is a game extension, and the main class must extends "GameExtension".
-	<property name="main" value="com.mysite.example.SampleGameExtension" />
-	<property name="type" value="game" />
-	-->
-	
-	<!-- Set "dependsOn" if this extensions depends on other extensions.
-	Example 1:
-	<property name="dependsOn" value="engine-com.polydes.datastruct-1.1.0" />
-	
-	Example 2 - comma delimited, "engine", "stencyl", "java", and "toolset" dependencies:
-	<property name="dependsOn" value="engine-com.polydes.datastruct-1.1.0,stencyl-3.4.0,java-1.8,toolset-com.polydes.datastruct-1.0.0" />
-	-->
-	
 	<property name="name" value="torcado themes" />
 	<property name="description" value="pretty" />
 	<property name="author" value="torcado" />
 	<property name="website" value="http://torcado.com" />
-	<property name="internalVersion" value="2" />
-	<property name="version" value="1.1.0" />
-	
-	<!-- Set "repository" if this extension is part of a third-party repository where it can be updated.
-	<property name="repository" value="http://www.polydes.com/repo" />
-	-->
+	<property name="internalVersion" value="3" />
+	<property name="version" value="1.1.1" />
 	
 	<include file="build-helper.xml" as="helper" />
 	
 	<target name="dist">
-		
-		<!-- Set "usingLibs" to true to automatically bundle .jar files in the "lib" folder.
-		<var name="usinglibs" value="true" />
-		-->
-		
-		<!-- Add .jars to "clspath" if you need them but don't want them bundled. For example, a toolset extension dependency.
-		<var name="clspath" value="${clspath}:C:/Path/to/extension.jar" />
-		-->
 		
 		<antcall>
 			

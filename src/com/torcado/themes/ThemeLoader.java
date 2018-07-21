@@ -37,6 +37,8 @@ public class ThemeLoader
     
     public static final Map<String, BlockTheme> Default_Block = new HashMap();
     public static final Map<String, Color> Default_Main = new HashMap();
+    
+    public static final Map<String, Color> DefaultGrayBG_Main = new HashMap();
 
     static
     {
@@ -48,9 +50,10 @@ public class ThemeLoader
         DarkFlat_Block.put("LIME",      new BlockTheme( new Color( 59,  97,  60), new Color(44, 43, 63), new Color(44, 43, 63), new Color(44, 43, 63) ));
         DarkFlat_Block.put("PURPLE",    new BlockTheme( new Color(104,  60, 111), new Color(44, 43, 63), new Color(44, 43, 63), new Color(44, 43, 63) ));
         DarkFlat_Block.put("RED",       new BlockTheme( new Color(170,  66,  64), new Color(44, 43, 63), new Color(44, 43, 63), new Color(44, 43, 63) ));
-        DarkFlat_Block.put("GRAY",      new BlockTheme( new Color( 83,  83,  89), new Color(44, 43, 63), new Color(44, 43, 63), new Color(44, 43, 63) ));
-        DarkFlat_Block.put("DARK_GRAY", new BlockTheme( new Color( 68,  68,  76), new Color(44, 43, 63), new Color(44, 43, 63), new Color(44, 43, 63) ));
-
+        DarkFlat_Block.put("GRAY",      new BlockTheme( new Color( 87,  87, 107), new Color(44, 43, 63), new Color(44, 43, 63), new Color(44, 43, 63) ));
+        DarkFlat_Block.put("DARK_GRAY", new BlockTheme( new Color(106, 106, 124), new Color(44, 43, 63), new Color(44, 43, 63), new Color(44, 43, 63) ));
+        DarkFlat_Block.put("L_GRAY",    new BlockTheme( new Color( 66,  66,  79), new Color(44, 43, 63), new Color(44, 43, 63), new Color(44, 43, 63) ));
+        
         DarkFlat_Main.put("TEXT_COLOR",             new Color(255, 255, 255)); // main text, not block text
         DarkFlat_Main.put("APP_COLOR",              new Color( 72,  64,  94)); // border in code editor view
         DarkFlat_Main.put("APP_COLOR2",             new Color(111, 111, 111)); // text in palette headers
@@ -92,8 +95,9 @@ public class ThemeLoader
         DarkNeon_Block.put("LIME",      new BlockTheme(new Color(51, 86, 66), new Color(59, 153, 67), new Color(59, 153, 67), new Color(59, 153, 67) ));
         DarkNeon_Block.put("PURPLE",    new BlockTheme(new Color(86, 59, 97), new Color(174, 78, 196), new Color(174, 78, 196), new Color(174, 78, 196) ));
         DarkNeon_Block.put("RED",       new BlockTheme(new Color(130, 61, 66), new Color(229, 86, 64), new Color(229, 86, 64), new Color(229, 86, 64) ));
-        DarkNeon_Block.put("GRAY",      new BlockTheme(new Color(73, 73, 84), new Color(122, 122, 122), new Color(122, 122, 122), new Color(122, 122, 122) ));
-        DarkNeon_Block.put("DARK_GRAY", new BlockTheme(new Color(73, 73, 84).darker(), new Color(122, 122, 122).darker(), new Color(122, 122, 122).darker(), new Color(122, 122, 122).darker() ));
+        DarkNeon_Block.put("GRAY",      new BlockTheme(new Color(85, 85, 104), new Color(125, 125, 165), new Color(125, 125, 165), new Color(125, 125, 165) ));
+        DarkNeon_Block.put("DARK_GRAY", new BlockTheme(new Color(96, 86, 122), new Color(141, 141, 188), new Color(141, 141, 188), new Color(141, 141, 188) ));
+        DarkNeon_Block.put("L_GRAY",    new BlockTheme(new Color(66,  66,  79), new Color(103, 103, 132), new Color(103, 103, 132), new Color(103, 103, 132) ));
         
         
         Default_Block.put("ORANGE",    new BlockTheme( new Color(200, 140, 55), new Color(150, 100, 60), new Color(210, 150, 65), new Color(220, 160, 75) ));
@@ -135,6 +139,36 @@ public class ThemeLoader
         Default_Main.put("RED_END",                new Color(150, 70, 70).darker().darker());
         Default_Main.put("GREEN_START",            new Color(70, 120, 70));
         Default_Main.put("GREEN_END",              new Color(70, 120, 70).darker().darker());
+        
+        
+        DefaultGrayBG_Main.put("TEXT_COLOR",             Color.WHITE);
+        DefaultGrayBG_Main.put("APP_COLOR",              Color.GRAY);
+        DefaultGrayBG_Main.put("APP_COLOR2",             new Color(111, 111, 111));
+        DefaultGrayBG_Main.put("ROUNDED_LABEL_COLOR",    Color.GRAY);
+        DefaultGrayBG_Main.put("BORDER_COLOR",           new Color(45, 45, 45));
+        DefaultGrayBG_Main.put("BG_COLOR",               Color.DARK_GRAY);
+        DefaultGrayBG_Main.put("INPUT_COLOR",            Color.LIGHT_GRAY);
+        DefaultGrayBG_Main.put("NEUTRAL_BG_COLOR",       new Color(128, 128, 128));
+        DefaultGrayBG_Main.put("NEUTRAL_BG_COLOR2",      new Color(119, 119, 110));
+        DefaultGrayBG_Main.put("LIGHT_BG_COLOR",         new Color(92, 92, 92));
+        DefaultGrayBG_Main.put("LIGHT_BG_COLOR2",        new Color(98, 98, 92));
+        DefaultGrayBG_Main.put("LIGHT_BG_COLOR3",        new Color(78, 78, 80));
+        DefaultGrayBG_Main.put("EDITOR_BG_COLOR",        new Color(64, 64, 74));
+        DefaultGrayBG_Main.put("DARK_BG_COLOR",          new Color(68, 68, 68));
+        DefaultGrayBG_Main.put("LIGHT_BUTTON_BAR_START", new Color(227, 227, 227));
+        DefaultGrayBG_Main.put("LIGHT_BUTTON_BAR_END",   new Color(171, 171, 171));
+        DefaultGrayBG_Main.put("BUTTON_BAR_START",       new Color(207, 207, 207));
+        DefaultGrayBG_Main.put("BUTTON_BAR_END",         new Color(141, 141, 141));
+        DefaultGrayBG_Main.put("COMMAND_BAR_START",      new Color(65, 65, 65));
+        DefaultGrayBG_Main.put("COMMAND_BAR_MID",        new Color(50, 50, 50));
+        DefaultGrayBG_Main.put("COMMAND_BAR_END",        new Color(40, 40, 40));
+        DefaultGrayBG_Main.put("TAB_START",              new Color(187, 197, 217));
+        DefaultGrayBG_Main.put("TAB_END",                new Color(141, 161, 181));
+        DefaultGrayBG_Main.put("DIALOG_BORDER",          new Color(80, 80, 80));
+        DefaultGrayBG_Main.put("RED_START",              new Color(150, 70, 70));
+        DefaultGrayBG_Main.put("RED_END",                new Color(150, 70, 70).darker().darker());
+        DefaultGrayBG_Main.put("GREEN_START",            new Color(70, 120, 70));
+        DefaultGrayBG_Main.put("GREEN_END",              new Color(70, 120, 70).darker().darker());
     }
 
     public static void run(String ThemeName) throws NoSuchFieldException, IllegalAccessException {
@@ -148,6 +182,9 @@ public class ThemeLoader
     	} else if(ThemeName.equals("DarkNeon")){
     		block = DarkNeon_Block;
     		main = DarkFlat_Main;
+    	} else if(ThemeName.equals("Default_GrayBG")){
+    		block = Default_Block;
+    		main = DefaultGrayBG_Main;
     	} else {
     		block = Default_Block;
     		main = Default_Main;

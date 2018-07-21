@@ -134,7 +134,7 @@ public class ThemeExtension extends BaseExtension
 			{
 				startForm();
 				addHeader("Options");
-				dropdown = addDropdown("theme", new String[] {"default", "DarkFlat", "DarkNeon"});
+				dropdown = addDropdown("theme", new String[] {"default", "DarkFlat", "DarkNeon", "Default_GrayBG"});
 				addHeader("You will need to restart stencyl (or just File > close game) and reopen to apply all changes.");
 				endForm();
 				
