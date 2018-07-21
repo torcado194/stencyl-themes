@@ -33,34 +33,34 @@ public class ThemeLoader
         DarkFlat_Block.put("GRAY",      new BlockTheme( new Color( 83,  83,  89), new Color(44, 43, 63), new Color(44, 43, 63), new Color(44, 43, 63) ));
         DarkFlat_Block.put("DARK_GRAY", new BlockTheme( new Color( 68,  68,  76), new Color(44, 43, 63), new Color(44, 43, 63), new Color(44, 43, 63) ));
 
-        DarkFlat_Main.put("TEXT_COLOR",             new Color(255, 0, 0));
-        DarkFlat_Main.put("APP_COLOR",              new Color(255, 128, 0));
-        DarkFlat_Main.put("APP_COLOR2",             new Color(255, 0, 128));
-        DarkFlat_Main.put("ROUNDED_LABEL_COLOR",    new Color(255, 128, 128));
-        DarkFlat_Main.put("BORDER_COLOR",           new Color(128, 0, 0));
-        DarkFlat_Main.put("BG_COLOR",               new Color(128, 128, 0));
-        DarkFlat_Main.put("INPUT_COLOR",            new Color(128, 0, 128));
-        DarkFlat_Main.put("NEUTRAL_BG_COLOR",       new Color(44, 43, 63));
-        DarkFlat_Main.put("NEUTRAL_BG_COLOR2",      new Color(255, 0, 255));
-        DarkFlat_Main.put("LIGHT_BG_COLOR",         new Color(0, 0, 255));
-        DarkFlat_Main.put("LIGHT_BG_COLOR2",        new Color(0, 255, 0));
-        DarkFlat_Main.put("LIGHT_BG_COLOR3",        new Color(0, 255, 255));
-        DarkFlat_Main.put("EDITOR_BG_COLOR",        new Color(0, 0, 128));
-        DarkFlat_Main.put("DARK_BG_COLOR",          new Color(0, 128, 0));
-        DarkFlat_Main.put("LIGHT_BUTTON_BAR_START", new Color(0, 128, 255));
-        DarkFlat_Main.put("LIGHT_BUTTON_BAR_END",   new Color(0, 50, 0));
-        DarkFlat_Main.put("BUTTON_BAR_START",       new Color(0, 128, 50));
-        DarkFlat_Main.put("BUTTON_BAR_END",         new Color(50, 128, 0));
-        DarkFlat_Main.put("COMMAND_BAR_START",      new Color(50, 128, 50));
-        DarkFlat_Main.put("COMMAND_BAR_MID",        new Color(0, 50, 0));
-        DarkFlat_Main.put("COMMAND_BAR_END",        new Color(0, 50, 50));
-        DarkFlat_Main.put("TAB_START",              new Color(50, 80, 50));
-        DarkFlat_Main.put("TAB_END",                new Color(0, 80, 0));
-        DarkFlat_Main.put("DIALOG_BORDER",          new Color(80, 80, 128));
-        DarkFlat_Main.put("RED_START",              new Color(128, 80, 0));
-        DarkFlat_Main.put("RED_END",                new Color(80, 128, 0));
-        DarkFlat_Main.put("GREEN_START",            new Color(0, 128, 200));
-        DarkFlat_Main.put("GREEN_END",              new Color(80, 128, 50));
+        DarkFlat_Main.put("TEXT_COLOR",             new Color(255, 255, 255)); // main text, not block text
+        DarkFlat_Main.put("APP_COLOR",              new Color( 72,  64,  94)); // border in code editor view
+        DarkFlat_Main.put("APP_COLOR2",             new Color(111, 111, 111)); // text in palette headers
+        DarkFlat_Main.put("ROUNDED_LABEL_COLOR",    new Color(124, 123, 153)); // on popups, not in palette
+        DarkFlat_Main.put("BORDER_COLOR",           new Color( 23,  22,  33)); // popups, and single pixel around most window sections
+        DarkFlat_Main.put("BG_COLOR",               new Color( 72,  64,  94)); // events list background, behavior icon background
+        DarkFlat_Main.put("INPUT_COLOR",            new Color(225, 225, 225)); // input background (i could only find this behind the Font and Style dropdowns on the font window)
+        DarkFlat_Main.put("NEUTRAL_BG_COLOR",       new Color( 44,  43,  63)); // ?
+        DarkFlat_Main.put("NEUTRAL_BG_COLOR2",      new Color(255,   0, 255)); // -- ?
+        DarkFlat_Main.put("LIGHT_BG_COLOR",         new Color( 71,  70, 102)); // design mode background
+        DarkFlat_Main.put("LIGHT_BG_COLOR2",        new Color(109, 108, 142)); // attribute property background
+        DarkFlat_Main.put("LIGHT_BG_COLOR3",        new Color(109, 108, 142)); // font properties background
+        DarkFlat_Main.put("EDITOR_BG_COLOR",        new Color( 44,  43,  63)); // background on dashboard behind items, and side panel in scene designer
+        DarkFlat_Main.put("DARK_BG_COLOR",          new Color(255, 128,   0)); // -- ?
+        DarkFlat_Main.put("LIGHT_BUTTON_BAR_START", new Color(109, 108, 142)); // settings page tab backgrounds, font tabs background 
+        DarkFlat_Main.put("LIGHT_BUTTON_BAR_END",   new Color(109, 108, 142)); // ^
+        DarkFlat_Main.put("BUTTON_BAR_START",       new Color(109, 108, 142)); // tabs
+        DarkFlat_Main.put("BUTTON_BAR_END",         new Color(109, 108, 142)); // ^
+        DarkFlat_Main.put("COMMAND_BAR_START",      new Color(109, 108, 142)); // behind behavior name and "add to _"
+        DarkFlat_Main.put("COMMAND_BAR_MID",        new Color(109, 108, 142)); // ^
+        DarkFlat_Main.put("COMMAND_BAR_END",        new Color(109, 108, 142)); // ^
+        DarkFlat_Main.put("TAB_START",              new Color( 72,  64,  94)); // selected tab in scene editor panels
+        DarkFlat_Main.put("TAB_END",                new Color( 72,  64,  94)); // ^
+        DarkFlat_Main.put("DIALOG_BORDER",          new Color( 44,  43,  63)); // single pixel on left/right of popup
+        DarkFlat_Main.put("RED_START",              new Color(178,  66,  66)); // "delete/remove" button background
+        DarkFlat_Main.put("RED_END",                new Color(178,  66,  66)); // ^
+        DarkFlat_Main.put("GREEN_START",            new Color(100,  98, 142)); // button color for "create new _"
+        DarkFlat_Main.put("GREEN_END",              new Color(100,  98, 142)); // ^
     }
 
     public static void run() throws NoSuchFieldException, IllegalAccessException {
@@ -78,7 +78,7 @@ public class ThemeLoader
 
             field.set( null, theme );
         }
-        
+
         for (Map.Entry<String, Color> entry : DarkFlat_Main.entrySet()) {
             String color = entry.getKey();
             Color theme = entry.getValue();
