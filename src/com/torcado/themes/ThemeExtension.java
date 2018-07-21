@@ -16,6 +16,8 @@ public class ThemeExtension extends BaseExtension
 {
 	private static final Logger log = Logger.getLogger(ThemeExtension.class);
 	
+	public static String defaultTheme = "DarkFlat";
+	
 	/*
 	 * Happens when StencylWorks launches. 
 	 * 
@@ -34,12 +36,12 @@ public class ThemeExtension extends BaseExtension
 		gameCenterName = "Extension Name";
 		
 		try {
-			ThemeLoader.run();
-			log.info("THEME --------- loaded");
+			ThemeLoader.run(defaultTheme);
+			log.info("Themes --------- loaded");
 		} catch (NoSuchFieldException e) {
-			log.info("THEME --------- NoSuchFieldException");
+			log.info("Themes --------- NoSuchFieldException");
 		} catch (IllegalAccessException e) {
-			log.info("THEME --------- IllegalAccessException");
+			log.info("Themes --------- IllegalAccessException");
 		}
 	}
 	
@@ -54,6 +56,15 @@ public class ThemeExtension extends BaseExtension
 	public void onActivate()
 	{
 		log.info("SampleExtension : Activated");
+		
+		try {
+			ThemeLoader.run(defaultTheme);
+			log.info("Themes --------- loaded");
+		} catch (NoSuchFieldException e) {
+			log.info("Themes --------- NoSuchFieldException");
+		} catch (IllegalAccessException e) {
+			log.info("Themes --------- IllegalAccessException");
+		}
 	}
 	
 	/*
@@ -127,6 +138,7 @@ public class ThemeExtension extends BaseExtension
 				startForm();
 				addHeader("Options");
 				dropdown = addDropdown("theme", new String[] {"default", "DarkFlat", "DarkNeon"});
+				addHeader("You will need to restart stencyl (or just File > close game) and reopen to apply all changes.");
 				endForm();
 				
 				//Set the form's values
@@ -141,6 +153,15 @@ public class ThemeExtension extends BaseExtension
 			public void onPressedOK()
 			{
 				putProp("theme", dropdown.getSelectedItem());
+				
+				try {
+					ThemeLoader.run(readStringProp("theme", "DarkFlat"));
+					log.info("Themes --------- loaded");
+				} catch (NoSuchFieldException e) {
+					log.info("Themes --------- NoSuchFieldException");
+				} catch (IllegalAccessException e) {
+					log.info("Themes --------- IllegalAccessException");
+				}
 			}
 
 			@Override
