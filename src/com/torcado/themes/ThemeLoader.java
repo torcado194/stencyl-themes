@@ -13,8 +13,8 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.polydes.common.res.ResourceLoader;
-import com.polydes.common.res.Resources;
+//import com.polydes.common.res.ResourceLoader;
+//import com.polydes.common.res.Resources;
 
 import stencyl.sw.editors.snippet.designer.block.BlockTheme;
 import stencyl.sw.lnf.Theme;
@@ -26,7 +26,7 @@ public class ThemeLoader
 
     private static final Logger log = Logger.getLogger(ThemeExtension.class);
     
-    private static Resources res = ResourceLoader.getResources("com.torcado.themes");
+    //private static Resources res = ResourceLoader.getResources("com.torcado.themes");
 
     public static final Map<String, BlockTheme> DarkFlat_Block = new HashMap();
     public static final Map<String, Color> DarkFlat_Main = new HashMap();
