@@ -29,10 +29,12 @@ public class ThemeLoader
     //private static Resources res = ResourceLoader.getResources("com.torcado.themes");
 
     public static final Map<String, BlockTheme> DarkFlat_Block = new HashMap();
+    public static final Map<String, BlockTheme> DarkFlat_ThemeMap = new HashMap();
     public static final Map<String, Color> DarkFlat_Main = new HashMap();
     public static final Map<String, String> DarkFlat_Scroll = new HashMap();
     
     public static final Map<String, BlockTheme> DarkNeon_Block = new HashMap();
+    public static final Map<String, BlockTheme> DarkNeon_ThemeMap = new HashMap();
     public static final Map<String, Color> DarkNeon_Main = new HashMap();
     
     public static final Map<String, BlockTheme> Default_Block = new HashMap();
@@ -53,6 +55,18 @@ public class ThemeLoader
         DarkFlat_Block.put("GRAY",      new BlockTheme( new Color( 87,  87, 107), new Color(44, 43, 63), new Color(44, 43, 63), new Color(44, 43, 63) ));
         DarkFlat_Block.put("DARK_GRAY", new BlockTheme( new Color(106, 106, 124), new Color(44, 43, 63), new Color(44, 43, 63), new Color(44, 43, 63) ));
         DarkFlat_Block.put("LGRAY",     new BlockTheme( new Color( 66,  66,  79), new Color(44, 43, 63), new Color(44, 43, 63), new Color(44, 43, 63) ));
+        
+        DarkFlat_ThemeMap.put("blue",     DarkFlat_Block.get("BLUE"));
+        DarkFlat_ThemeMap.put("cyan",     DarkFlat_Block.get("LBLUE"));
+        DarkFlat_ThemeMap.put("green",    DarkFlat_Block.get("GREEN"));
+        DarkFlat_ThemeMap.put("lime",     DarkFlat_Block.get("LIME"));
+        DarkFlat_ThemeMap.put("purple",   DarkFlat_Block.get("PURPLE"));
+        DarkFlat_ThemeMap.put("red",      DarkFlat_Block.get("RED"));
+        DarkFlat_ThemeMap.put("gray",     DarkFlat_Block.get("GRAY"));
+        DarkFlat_ThemeMap.put("charcoal", DarkFlat_Block.get("DARK_GRAY"));
+        DarkFlat_ThemeMap.put("dust",     DarkFlat_Block.get("LGRAY"));
+        DarkFlat_ThemeMap.put("yellow",   DarkFlat_Block.get("ORANGE"));
+        
         
         DarkFlat_Main.put("TEXT_COLOR",             new Color(255, 255, 255)); // main text, not block text
         DarkFlat_Main.put("APP_COLOR",              new Color( 72,  64,  94)); // border in code editor view
@@ -98,6 +112,18 @@ public class ThemeLoader
         DarkNeon_Block.put("GRAY",      new BlockTheme(new Color(85, 85, 104), new Color(125, 125, 165), new Color(125, 125, 165), new Color(125, 125, 165) ));
         DarkNeon_Block.put("DARK_GRAY", new BlockTheme(new Color(96, 86, 122), new Color(141, 141, 188), new Color(141, 141, 188), new Color(141, 141, 188) ));
         DarkNeon_Block.put("LGRAY",     new BlockTheme(new Color(66,  66,  79), new Color(103, 103, 132), new Color(103, 103, 132), new Color(103, 103, 132) ));
+        
+        DarkNeon_ThemeMap.put("blue",     DarkFlat_Block.get("BLUE"));
+        DarkNeon_ThemeMap.put("cyan",     DarkFlat_Block.get("LBLUE"));
+        DarkNeon_ThemeMap.put("green",    DarkFlat_Block.get("GREEN"));
+        DarkNeon_ThemeMap.put("lime",     DarkFlat_Block.get("LIME"));
+        DarkNeon_ThemeMap.put("purple",   DarkFlat_Block.get("PURPLE"));
+        DarkNeon_ThemeMap.put("red",      DarkFlat_Block.get("RED"));
+        DarkNeon_ThemeMap.put("gray",     DarkFlat_Block.get("GRAY"));
+        DarkNeon_ThemeMap.put("charcoal", DarkFlat_Block.get("DARK_GRAY"));
+        DarkNeon_ThemeMap.put("dust",     DarkFlat_Block.get("LGRAY"));
+        DarkNeon_ThemeMap.put("yellow",   DarkFlat_Block.get("ORANGE"));
+        
         
         
         Default_Block.put("ORANGE",    new BlockTheme( new Color(200, 140, 55), new Color(150, 100, 60), new Color(210, 150, 65), new Color(220, 160, 75) ));
@@ -212,6 +238,25 @@ public class ThemeLoader
 
             field.set( null, theme );
         }
+        {
+        	Field field;
+        	try {
+            	field = BlockTheme.class.getDeclaredField( "THEMES" );
+            	
+            	field.setAccessible( true );
+
+                Field modifiersField = Field.class.getDeclaredField( "modifiers" );
+                modifiersField.setAccessible( true );
+                modifiersField.setInt( field, field.getModifiers() & ~Modifier.FINAL );
+
+                field.set( null, DarkFlat_ThemeMap );
+            	
+            } catch (NoSuchFieldException e) {
+            	log.info(e);
+            }
+	        
+        }
+        
 
         log.info("Themes --------- theming windows");
         for (Map.Entry<String, Color> entry : main.entrySet()) {
